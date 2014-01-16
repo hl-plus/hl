@@ -4,17 +4,18 @@
 #include <vector>
 #include <string>
 #include "../throw.hpp"
+#include <json/json.h>
 
 #if defined (INSTANTIATION_WORK)
     #include <hl/include/if.hpp>
     #include <hl/include/hl_ipc/conversion_json_base.hpp>
-    #include <hl/include/hl_ipc/ls_error.hpp>
     #include <hl/include/any2str.hpp>
+    // #include <hl/include/hl_ipc/ls_error.hpp>
 #else
     #include "../if.hpp"
     #include "../hl_ipc/conversion_json_base.hpp"
-    #include "../hl_ipc/ls_error.hpp"
     #include "../any2str.hpp"
+    // #include "../hl_ipc/ls_error.hpp"
 #endif
 
 namespace hl
