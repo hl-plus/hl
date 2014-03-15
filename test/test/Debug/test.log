@@ -1,0 +1,21 @@
+﻿Построение начато 19.01.2014 18:58:14.
+     1>Проект "D:\projects\test\test\test.vcxproj" в узле 2 (целевые объекты build).
+     1>InitializeBuildStatus:
+         Обращение к "Debug\test.unsuccessfulbuild".
+       ClCompile:
+         Для всех выходных данных обновления не требуется.
+         Для всех выходных данных обновления не требуется.
+       ManifestResourceCompile:
+         Для всех выходных данных обновления не требуется.
+       Link:
+         Для всех выходных данных обновления не требуется.
+       Manifest:
+         Для всех выходных данных обновления не требуется.
+       FinalizeBuildStatus:
+         Файл "Debug\test.unsuccessfulbuild" удаляется.
+         Обращение к "Debug\test.lastbuildstate".
+     1>Построение проекта "D:\projects\test\test\test.vcxproj" завершено (целевые объекты build).
+
+Построение успешно завершено.
+
+Затраченное время: 00:00:00.03
