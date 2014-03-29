@@ -12,6 +12,7 @@
 
 #include <boost/mpl/bool.hpp>
 #include <boost/mpl/string.hpp>
+#include <string.h>
 #pragma GCC diagnostic pop
 
 template <typename >
@@ -110,6 +111,11 @@ mpl_print()
 }
 
 // static int __o = mpl_print<CITY>();
+struct root;
+struct begin_group;
+struct begin_group_0;
+struct end_group;
+struct empty_node;
 struct block;
 
 template <char... Cs> struct string_;
@@ -345,6 +351,11 @@ struct cs_end <C, Cs...>
 
 struct Block;
 
+/// Scope
+template <typename Repeater, typename Seq>
+struct seq_scope
+{  };
+
 struct skip_node;
 
 template <typename Seq, typename Rule>
@@ -511,6 +522,7 @@ struct apply_last_char<scope_state<Seq, Data > >
     typedef scope_state<sec_, Data > type;
 };
 
+/// !!TODO: group scope changing
 template <typename Seq
     , typename Data, typename Type>
 struct push_<scope_state<Seq, Data >, Type >
@@ -519,6 +531,20 @@ struct push_<scope_state<Seq, Data >, Type >
 
     typedef Data data;
     ttf push_back<Seq, Type>::type sequence;
+
+    // Move data to next
+    typedef scope_state<sequence, Data> type;
+};
+
+/// begin group scope
+/// we should change it
+template <typename Data, typename Type>
+struct push_<scope_state<begin_group, Data >, Type >
+{
+    enum { is_wait = 1 };
+
+    typedef Data data;
+    typedef Type sequence;
 
     // Move data to next
     typedef scope_state<sequence, Data> type;
@@ -602,12 +628,6 @@ struct r_obj<Seq, '{', C...>
         pss_r_obj<Seq, C...>::type type;
 };
 
-struct root;
-struct begin_group;
-struct begin_group_0;
-struct end_group;
-struct empty_node;
-
 template <typename Seq>
 struct scope {  };
 
@@ -639,6 +659,7 @@ struct r_obj<Seq, ')', Cs...>
 
     // final group sequence
     ttf push_<typename state_parser::data
+                    /// last change this place we
                     , scope<group_type> >::type seq;
 
     typedef typename
@@ -652,24 +673,32 @@ struct r_obj<Seq, '|', C...>
         typename apply_altern<Seq>::type, C...>::type type;
 };
 
-template <typename > struct rep_scope;
-
-template <typename Type, typename Tail>
-struct repeater_apply : apply_allways<0>
+template <int, int >
+struct repeater
 {
-    typedef typename boost::mpl::if_c<
-        boost::is_same<Tail, null_type>::value
-            , rep_scope<Type >
-            , Type >::type type;
 
-    enum { value = boost::is_same<Tail, null_type>::value };
+};
 
+template <int I0, int I1>
+struct repeater_pred
+{
+    template <typename Type, typename Tail>
+    struct repeater_apply : apply_allways<0>
+    {
+        typedef typename boost::mpl::if_c<
+            boost::is_same<Tail, null_type>::value
+                , seq_scope <repeater<I0, I1>, Type >
+                , Type >::type type;
+
+        enum { value = boost::is_same<Tail, null_type>::value };
+
+    };
 };
 
 template <typename Seq, char... C>
 struct r_obj<Seq, '*', C...>
 {
-    ttf replace_if<Seq, repeater_apply>::type tr;
+    ttf replace_if<Seq, repeater_pred<0, -1>::repeater_apply>::type tr;
     ttf r_obj<tr, C...>::type type;
 };
 
@@ -680,6 +709,18 @@ struct Test
 {
     enum { value = boost::is_same<Type, char>::value ? 2 : 0 };
     typedef W<Type> type;
+};
+
+template <typename Type>
+struct compile
+{
+
+};
+
+template <typename Quant, typename... Seq>
+struct compile <alter_scope<Quant, Seq... > >
+{
+    /// ttf state::push_alter<Quant>::type;
 };
 
 int main()
