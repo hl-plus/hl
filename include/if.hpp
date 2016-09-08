@@ -3,7 +3,7 @@
 #ifndef IF_SDJFGDSHFGJDSFJGDSFJHGDSF_HPP
 #define IF_SDJFGDSHFGJDSFJGDSFJHGDSF_HPP
 
-#if defined (__HL_INSTALLED)
+#if defined (HL_INSTALLED)
 #   include <hl/bool_types.hpp>
 #else
 #   include "../include/bool_types.hpp"

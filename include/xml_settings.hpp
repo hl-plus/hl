@@ -10,7 +10,7 @@
 # pragma GCC system_header
 #endif // defined(_MSC_VER) && (_MSC_VER >= 1200)
 
-#if defined (__BOOST_INSTALLED)
+#if defined (BOOST_INSTALLED)
     #include <boost_1_53_0\boost\property_tree\ptree.hpp>
     #include <boost_1_53_0\boost\property_tree\xml_parser.hpp>
 #else

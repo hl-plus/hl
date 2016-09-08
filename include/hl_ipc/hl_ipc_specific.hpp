@@ -1,7 +1,7 @@
 #ifndef hl_IPC_SPECIFIC_HPP_OKLJSGKDJSFGKDFJGKJBVXCDTGFUHUG
 #define hl_IPC_SPECIFIC_HPP_OKLJSGKDJSFGKDFJGKJBVXCDTGFUHUG
 
-#if defined (__HL_INSTALLED)
+#if defined (HL_INSTALLED)
     #include <hl/include/type_traits.hpp>
     #include <hl/include/throw.hpp>
     #include <hl/include/sfinae.hpp>

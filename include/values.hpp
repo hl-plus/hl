@@ -9,11 +9,11 @@
 # pragma GCC system_header
 #endif // defined(_MSC_VER) && (_MSC_VER >= 1200)
 
-#if defined (__BOOST_INSTALLED)
+#if defined (BOOST_INSTALLED)
 #    include <boost/mpl/if.hpp>
 #    include <boost/type_traits/is_same.hpp>
 #else
-#if defined (__HL_INSTALLED)
+#if defined (HL_INSTALLED)
 #    include <hl/typename.hpp>
 #    include <hl/bool_types.hpp>
 #    include <hl/make_types.hpp>

@@ -3,7 +3,7 @@
 
 #include <iterator>
 #include <utility>
-#if defined (__HL_INSTALLED)
+#if defined (HL_INSTALLED)
     #include <hl/include/hl_ipc/hl_ipc_specific.hpp>
     #include <hl/include/is_same.hpp>
 #else

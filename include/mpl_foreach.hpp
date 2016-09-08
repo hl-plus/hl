@@ -9,7 +9,7 @@
 # pragma GCC system_header
 #endif // defined(_MSC_VER) && (_MSC_VER >= 1200)
 
-#if defined (__HL_INSTALLED)
+#if defined (HL_INSTALLED)
 #    include <hl/include/vi_item.hpp>
 #    include <hl/include/is_same.hpp>
 #    include <hl/include/t_list_helper.hpp>
@@ -27,7 +27,7 @@ namespace hl
         template <typename type>
         struct is_mpl_vector : hl::false_type
         {    };
-#if defined (__BOOST_INSTALLED)
+#if defined (BOOST_INSTALLED)
         template<
               typename T0, typename T1, typename T2, typename T3, typename T4
             , typename T5, typename T6, typename T7, typename T8, typename T9

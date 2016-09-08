@@ -3,7 +3,7 @@
 #ifndef MAKE_LIST_HPP_INCLUDED_IDSUGDJGFDSJFHGKSJROIQIWTEEWOJFLASDJNVDSAV
 #define MAKE_LIST_HPP_INCLUDED_IDSUGDJGFDSJFHGKSJROIQIWTEEWOJFLASDJNVDSAV
 
-#if defined (__BOOST_INSTALLED)
+#if defined (BOOST_INSTALLED)
 #    include <boost/type_traits/is_same.hpp>
 #    include <boost/mpl/vector.hpp>
 #    include <boost/mpl/if.hpp>

@@ -1,7 +1,7 @@
 #ifndef hl_SERVICE_SPECIFIC_HPP_DLKGFJHKDFHDFJH
 #define hl_SERVICE_SPECIFIC_HPP_DLKGFJHKDFHDFJH
 
-#if defined (__HL_INSTALLED)
+#if defined (HL_INSTALLED)
     #include "pbn_json_backend.hpp"
 #else
     #include "pbn_json_backend.hpp"

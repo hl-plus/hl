@@ -12,7 +12,7 @@
 // This file contains functionality of extractor to reflection inside a namespace scope
 //
 
-#ifdef __HL_INSTALLED
+#ifdef HL_INSTALLED
     #include <hl/register_type.hpp>
 #else
     #include "register_type.hpp"

@@ -13,7 +13,7 @@
 # pragma GCC system_header
 #endif // defined(_MSC_VER) && (_MSC_VER >= 1200)
 
-#if defined (__BOOST_INSTALLED)
+#if defined (BOOST_INSTALLED)
   #include <boost/mpl/if.hpp>
   #include <boost/mpl/int.hpp>
   #include <boost/type_traits/is_same.hpp>
@@ -21,7 +21,7 @@
   #define __USE_BASIC_HL
 #endif
 
-#if defined (__HL_INSTALLED)
+#if defined (HL_INSTALLED)
   #include <hl/register_type.hpp>
   #include <hl/sizer.hpp>
 #else

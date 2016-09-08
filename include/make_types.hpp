@@ -10,7 +10,7 @@
 #endif // defined(_MSC_VER) && (_MSC_VER >= 1200)
 
 #if !defined(__USE_BOOST_MPL_) || defined (__USE_HL_MPL)
-#if defined (__HL_INSTALLED)
+#if defined (HL_INSTALLED)
 #    include <hl/if.hpp>
 #    include <hl/is_same.hpp>
 #    include <hl/t_list_helper.hpp>

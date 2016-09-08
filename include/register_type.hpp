@@ -9,7 +9,7 @@
 # pragma GCC system_header
 #endif // defined(_MSC_VER) && (_MSC_VER >= 1200)
 
-#if defined(__HL_INSTALLED)
+#if defined(HL_INSTALLED)
 //
 // This class contains registration type implementation
 //

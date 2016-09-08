@@ -9,7 +9,7 @@
 #define LG_ASSERT(o) \
     if (!o) hl::std_throw_(std::string("exception in: ") + __PRETTY_FUNCTION__);
 
-#if defined (__HL_INSTALLED)
+#if defined (HL_INSTALLED)
     #include <hl/include/throw.hpp>
     #include <hl/include/hl_ipc/hl_ipc_specific.hpp>
     #include <hl/include/hl_ipc/optional.hpp>

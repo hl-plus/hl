@@ -8,7 +8,7 @@
 #include <memory>
 #include <algorithm>
 
-#if defined (__HL_INSTALLED)
+#if defined (HL_INSTALLED)
     #include <hl/include/values.hpp>
     #include <hl/include/sizer.hpp>
     #include <hl/include/hl_ipc/hl_ipc_specific.hpp>
